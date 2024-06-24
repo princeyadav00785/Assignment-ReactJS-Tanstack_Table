@@ -21,7 +21,7 @@ const fetchData = async () => {
   return data;
 };
 
-export default function App() {
+export default function Table() {
   const [data, setData] = useState([]);
   const [categoryList, setCategoryList] = useState([]);
   const [subcategoryList, setSubCategoryList] = useState([]);
@@ -56,8 +56,6 @@ export default function App() {
     const year = date.getFullYear();
     return `${day}-${month}-${year}`;
   };
-     console.log(categoryList);
-  //    console.log(subcategoryList);
   const columns = useMemo(
     () => [
       {
@@ -100,7 +98,6 @@ export default function App() {
         header: "CreatedAt",
         Header: () => <i>CreatedAt</i>, 
         Cell: ({ cell }) => formatDate(cell.getValue()),
-        // filterVariant: 'datetime-range',
       },
       {
         accessorFn: (row) => row.updatedAt,
@@ -196,15 +193,9 @@ export default function App() {
 
   return (
     <>
-      {/* <LocalizationProvider dateAdapter={AdapterDayjs}> */}
       <Stack gap="1rem">
-        {/* <DemoRadioGroup
-        groupedColumnMode={groupedColumnMode}
-        setGroupedColumnMode={setGroupedColumnMode}
-      /> */}
         <MaterialReactTable table={table} />
       </Stack>
-      {/* </LocalizationProvider> */}
     </>
   );
 }

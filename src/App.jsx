@@ -1,12 +1,9 @@
 import './App.css'
-import Home  from './Components/Home'
-
+import  Table  from './Pages/Table'
 function App() {
- 
-
   return (
     <>
-    <Home/>  
+    <Table/>  
     </>
   )
 }
