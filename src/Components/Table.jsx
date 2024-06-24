@@ -86,10 +86,10 @@ export default function Table() {
         id: "subcategory", 
         header: "Sub-Category",
         Header: () => <i>Sub-Category</i>, 
-        filterVariant: "select",
-        filterSelectOptions: subcategoryList.map((category) => ({
-            text: category,
-            value: category
+        filterVariant: "multi-select",
+        filterSelectOptions: subcategoryList.map((subcategory) => ({
+            text: subcategory,
+            value: subcategory
           })),
       },
       {
@@ -138,7 +138,7 @@ export default function Table() {
         },
       },
     ],
-    []
+    [categoryList,subcategoryList]
   );
 
 
